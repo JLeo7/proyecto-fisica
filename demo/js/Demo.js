@@ -28,14 +28,14 @@
 
     var demo = MatterTools.Demo.create({
         toolbar: {
-            title: 'matter-js',
-            url: 'https://github.com/liabru/matter-js',
+            title: 'Proyecto final Física',
+            url: '#',
             reset: true,
-            source: true,
-            inspector: true,
-            tools: true,
+            source: false,
+            inspector: false,
+            tools: false,
             fullscreen: true,
-            exampleSelect: true
+            exampleSelect: false
         },
         tools: {
             inspector: false,
