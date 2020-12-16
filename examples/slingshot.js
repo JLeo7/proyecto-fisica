@@ -1,5 +1,9 @@
 var Example = Example || {};
 
+let cuadros = [];
+
+let messageShown = false;
+
 Example.slingshot = function () {
     var Engine = Matter.Engine,
         Render = Matter.Render,
@@ -54,10 +58,12 @@ Example.slingshot = function () {
         });
 
 
-    var ground2 = Bodies.rectangle(660, 400, 250, 30, { isStatic: true });
+    var ground2 = Bodies.rectangle(560, 400, 250, 30, { isStatic: true });
 
-    var pyramid2 = Composites.pyramid(550, 0, 9, 15, 0, 0, function (x, y) {
-        return Bodies.rectangle(x, y, 25, 40);
+    var pyramid2 = Composites.pyramid(450, 0, 9, 9, 0, 0, function (x, y) {
+        let rectangle = Bodies.rectangle(x, y, 25, 40);
+        cuadros.push(rectangle);
+        return rectangle;
     });
 
     World.add(engine.world, [ground, ground2, pyramid2, rock, elastic]);
@@ -68,7 +74,26 @@ Example.slingshot = function () {
             World.add(engine.world, rock);
             elastic.bodyB = rock;
         }
+        let cantDown = 0;
+        cuadros.forEach(value => {
+            if(value.position.y > 400){
+                cantDown++;
+            }
+        })
+        if(cantDown == 25){
+            if(!messageShown){
+                messageShown = true;
+                alert('Ganaste!');
+            }
+            location.reload();
+        }
+
     });
+
+    Events.on(pyramid2, 'collision', function() {
+
+    })
+
 
     // add mouse control
     var mouse = Mouse.create(render.canvas),
