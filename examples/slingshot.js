@@ -67,7 +67,9 @@ Example.slingshot = function () {
     // add bodies
     var ground = Bodies.rectangle(395, 600, 815, 50, { isStatic: true }),
         rockOptions = {
-            density: 0.004, render: {
+            density: 0.004,
+            restitution: 0.80,
+            render: {
                 sprite: {
                     xScale: 0.37,
                     yScale: 0.37,
