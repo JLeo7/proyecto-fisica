@@ -69,8 +69,8 @@ Example.slingshot = function () {
         rockOptions = {
             density: 0.004, render: {
                 sprite: {
-                    xScale: 0.5,
-                    yScale: 0.5,
+                    xScale: 0.37,
+                    yScale: 0.37,
                     texture: './img/ball.png',
                 }
             }
