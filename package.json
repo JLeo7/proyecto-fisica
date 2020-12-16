@@ -40,7 +40,7 @@
     "build": "webpack --mode=production & webpack --mode=production --env.MINIMIZE",
     "build-alpha": "webpack --mode=production --env.ALPHA & webpack --mode=production --env.MINIMIZE --env.ALPHA",
     "build-examples": "webpack --config webpack.examples.config.js --mode=production --env.ALPHA & webpack --config webpack.examples.config.js --mode=production --env.MINIMIZE --env.ALPHA",
-    "lint": "eslint 'src/**/*.js' 'demo/js/Demo.js' 'demo/js/Compare.js' 'examples/*.js' 'webpack.*.js' 'Gulpfile.js'",
+    "lint": "eslint 'src/**/*.js' 'demo/js/Demo.js' 'examples/*.js' 'webpack.*.js' 'Gulpfile.js'",
     "doc": "gulp doc",
     "test": "npm run test-node",
     "test-all": "jest",
