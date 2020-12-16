@@ -4,6 +4,16 @@ let cuadros = [];
 
 let messageShown = false;
 
+let gravityInput = document.getElementById('gravityInput');
+
+console.log(gravityInput);
+
+let saveButton = document.getElementById('botonSalvar');
+
+let gravity = 1;
+
+
+
 Example.slingshot = function () {
     var Engine = Matter.Engine,
         Render = Matter.Render,
@@ -19,6 +29,22 @@ Example.slingshot = function () {
     // create engine
     var engine = Engine.create(),
         world = engine.world;
+
+
+    world.gravity = {
+        x: 0,
+        y: gravity,
+        scale: 0.001
+    }
+
+    saveButton.addEventListener('click', ev => {
+        gravity = gravityInput.value / 9.81;
+        world.gravity = {
+            x: 0,
+            y: gravity,
+            scale: 0.001
+        }
+    });
 
     // create renderer
     var render = Render.create({
