@@ -24,7 +24,7 @@ Example.slingshot = function () {
             width: 1920,
             height: 1080,
             showAngleIndicator: true,
-            // wireframes: false
+            wireframes: false
         }
     });
 
@@ -53,17 +53,14 @@ Example.slingshot = function () {
             stiffness: 0.05
         });
 
-    var pyramid = Composites.pyramid(500, 300, 9, 10, 0, 0, function (x, y) {
+
+    var ground2 = Bodies.rectangle(660, 400, 250, 30, { isStatic: true });
+
+    var pyramid2 = Composites.pyramid(550, 0, 9, 15, 0, 0, function (x, y) {
         return Bodies.rectangle(x, y, 25, 40);
     });
 
-    var ground2 = Bodies.rectangle(610, 250, 200, 20, { isStatic: true });
-
-    var pyramid2 = Composites.pyramid(550, 0, 5, 10, 0, 0, function (x, y) {
-        return Bodies.rectangle(x, y, 25, 40);
-    });
-
-    World.add(engine.world, [ground, pyramid, ground2, pyramid2, rock, elastic]);
+    World.add(engine.world, [ground, ground2, pyramid2, rock, elastic]);
 
     Events.on(engine, 'afterUpdate', function () {
         if (mouseConstraint.mouse.button === -1 && (rock.position.x > 190 || rock.position.y < 430)) {
