@@ -1,13 +1,4 @@
-/**
-* The `Matter.Composite` module contains methods for creating and manipulating composite bodies.
-* A composite body is a collection of `Matter.Body`, `Matter.Constraint` and other `Matter.Composite`, therefore composites form a tree structure.
-* It is important to use the functions in this module to modify composites, rather than directly modifying their properties.
-* Note that the `Matter.World` object is also a type of `Matter.Composite` and as such all composite methods here can also operate on a `Matter.World`.
-*
-* See the included usage [examples](https://github.com/liabru/matter-js/tree/master/examples).
-*
-* @class Composite
-*/
+
 
 var Composite = {};
 
@@ -20,13 +11,6 @@ var Body = require('./Body');
 
 (function() {
 
-    /**
-     * Creates a new composite. The options parameter is an object that specifies any properties you wish to override the defaults.
-     * See the properites section below for detailed information on what you can pass via the `options` object.
-     * @method create
-     * @param {} [options]
-     * @return {composite} A new composite
-     */
     Composite.create = function(options) {
         return Common.extend({ 
             id: Common.nextId(),
@@ -41,16 +25,7 @@ var Body = require('./Body');
         }, options);
     };
 
-    /**
-     * Sets the composite's `isModified` flag. 
-     * If `updateParents` is true, all parents will be set (default: false).
-     * If `updateChildren` is true, all children will be set (default: false).
-     * @method setModified
-     * @param {composite} composite
-     * @param {boolean} isModified
-     * @param {boolean} [updateParents=false]
-     * @param {boolean} [updateChildren=false]
-     */
+
     Composite.setModified = function(composite, isModified, updateParents, updateChildren) {
         composite.isModified = isModified;
 
@@ -66,14 +41,7 @@ var Body = require('./Body');
         }
     };
 
-    /**
-     * Generic add function. Adds one or many body(s), constraint(s) or a composite(s) to the given composite.
-     * Triggers `beforeAdd` and `afterAdd` events on the `composite`.
-     * @method add
-     * @param {composite} composite
-     * @param {} object
-     * @return {composite} The original composite with the objects added
-     */
+
     Composite.add = function(composite, object) {
         var objects = [].concat(object);
 
