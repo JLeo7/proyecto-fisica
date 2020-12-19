@@ -1,7 +1,7 @@
 {
-  "name": "Matter.js Physics Engine API Docs",
-  "description": "a 2D rigid body physics engine for the web",
-  "url": "http://brm.io/matter-js/",
+  "name": "Proyecto Final Física",
+  "description": "Universidad Cenfotec 2020",
+  "url": "",
   "options": {
       "linkNatives": true,
       "outdir": "doc/build",

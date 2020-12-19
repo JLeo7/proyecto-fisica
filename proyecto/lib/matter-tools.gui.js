@@ -49,7 +49,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/demo/lib";
+/******/ 	__webpack_require__.p = "/proyecto/lib";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);

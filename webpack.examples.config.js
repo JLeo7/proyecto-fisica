@@ -26,7 +26,7 @@ module.exports = (env = {}) => {
             libraryTarget: 'umd',
             umdNamedDefine: true,
             globalObject: 'this',
-            path: path.resolve(__dirname, './demo/js'),
+            path: path.resolve(__dirname, './proyecto/js'),
             filename: `Examples${minimize ? '.min' : ''}.js`
         },
         node: false,
